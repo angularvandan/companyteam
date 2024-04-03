@@ -1,0 +1,42 @@
+<div class="container mt-4">
+    <div class="row"*ngIf="showUserStatus">
+        <h2 class="text-center mb-4">User Table</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Domain</th>
+                    <th>Available</th>
+                    <th>User Count</th>
+                    <th>Show All Users
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of allTeam">
+                    <td>{{ user[0].domain }}</td>
+                    <td>{{ user[0].available ? 'Yes' : 'No' }}</td>
+                    <td>{{ user.length}}</td>
+                    <td><button class="btn btn-primary" (click)="allTeamUsers(user)">Show Users</button></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row"*ngIf="!showUserStatus">
+        <h2 class="text-center mb-4">Users Details</h2>
+        <div class="col-xl-4 col-md-6 my-2 d-flex justify-content-center" *ngFor="let user of allTeamUser ">
+            <div class="card position-relative">
+                <img src="{{user.avatar}}" class="card-img-top " style="width:100px;height:100px;" alt="User Image">
+                 
+                <div class="card-body">
+                    <h5 class="card-title">{{ user.first_name }} {{ user.last_name}}</h5>
+                    <p class="card-text">
+                        <strong>Email:</strong> {{ user.email }}<br>
+                        <strong>Gender:</strong> {{ user.gender }}<br>
+                        <strong>Domain:</strong> {{ user.domain }}<br>
+                        <strong>Available:</strong> {{ user.available ? 'Yes' : 'No' }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

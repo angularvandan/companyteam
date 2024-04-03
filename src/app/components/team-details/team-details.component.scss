@@ -1,0 +1,29 @@
+.container {
+    .row {
+        justify-content: center;
+        align-items: center;
+        .card {
+            min-width: 375px;
+            flex-direction: row;
+            max-width: 420px;
+            height: 175px;
+            @media screen and (max-width: 1200px) {
+                min-width: 461px;
+                height:175px;
+            }
+            @media screen and (max-width: 1000px) {
+                min-width: 350px;
+                height:175px;
+            }
+            @media screen and (max-width: 800px) {
+                min-width: 350px;
+                height:175px;
+            }
+            @media screen and (max-width: 768px) {
+                min-width: 375px;
+                height:175px;
+            }
+            
+        }
+    }
+}
