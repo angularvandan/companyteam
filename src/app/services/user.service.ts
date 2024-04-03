@@ -20,7 +20,9 @@ export class UserService {
     return this.http.get('http://localhost:3000/users');
   }
   setToLocalStorage(user: any) {
-    this.team=[...this.getFromLocalStorage()];
+    if(this.getFromLocalStorage.length){
+      this.team=[...this.getFromLocalStorage()];
+    }
     this.team.push(user);
     this.myBehaviorSubject.next(this.team);
     localStorage.setItem(TEAM_OF_USER, JSON.stringify(this.team));
