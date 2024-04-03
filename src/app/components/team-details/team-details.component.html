@@ -12,9 +12,9 @@
             </thead>
             <tbody>
                 <tr *ngFor="let user of allTeam">
-                    <td>{{ user[0].domain }}</td>
-                    <td>{{ user[0].available ? 'Yes' : 'No' }}</td>
-                    <td>{{ user.length}}</td>
+                    <td>{{ user[0]?.domain }}</td>
+                    <td>{{ user[0]?.available ? 'Yes' : 'No' }}</td>
+                    <td>{{ user?.length}}</td>
                     <td><button class="btn btn-primary" (click)="allTeamUsers(user)">Show Users</button></td>
 
                 </tr>

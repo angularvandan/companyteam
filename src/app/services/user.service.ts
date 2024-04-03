@@ -30,7 +30,7 @@ export class UserService {
     if (sellerJson) {
       return JSON.parse(sellerJson);
     }
-    return null;
+    return [];
   }
 
 }
