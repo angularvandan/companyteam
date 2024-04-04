@@ -17,7 +17,7 @@ export class UserService {
 
   }
   getUsers(){
-    return this.http.get('http://localhost:3000/users');
+    return this.http.get('https://companyteam-backend.onrender.com/users');
   }
   setToLocalStorage(user: any) {
     if(this.getFromLocalStorage.length){
