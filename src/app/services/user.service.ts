@@ -20,8 +20,9 @@ export class UserService {
     return this.http.get('https://companyteam-backend.onrender.com/users');
   }
   setToLocalStorage(user: any) {
-    if(this.getFromLocalStorage.length){
+    if(this.getFromLocalStorage().length){
       this.team=[...this.getFromLocalStorage()];
+      console.log(this.team);
     }
     this.team.push(user);
     this.myBehaviorSubject.next(this.team);
