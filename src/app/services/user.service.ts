@@ -9,9 +9,9 @@ const TEAM_OF_USER='user_team'
 })
 export class UserService {
 
-  myBehaviorSubject = new BehaviorSubject<IUser[]>(this.getFromLocalStorage());
+  myBehaviorSubject = new BehaviorSubject<IUser[][]>(this.getFromLocalStorage());
 
-  team:IUser[]=[];
+  team:IUser[][]=[];
 
   constructor(private http:HttpClient) {
 
