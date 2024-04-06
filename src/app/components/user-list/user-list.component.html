@@ -1,4 +1,8 @@
-<div class="container">
+<div class="container d-flex justify-content-center align-items-center"*ngIf="loadingStatus">
+    <div class="spinner-border text-secondary position-absolute"style="top:40vh;left:50vw" role="status">
+    </div>
+</div>
+<div class="container" *ngIf="!loadingStatus">
     <div class="row my-3">
         <div class="col-md-6 position-relative">
             <input type="text" #input class="form-control" placeholder="Search by name">

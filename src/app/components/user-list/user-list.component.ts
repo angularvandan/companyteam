@@ -20,6 +20,8 @@ export class UserListComponent implements OnInit {
 
   createTeamCheckVisible:boolean=false;
   teamDetailsStatus=false;
+  loadingStatus=true;
+
   selectedUsers: IUser[] = [];
 
 
@@ -41,6 +43,12 @@ export class UserListComponent implements OnInit {
       this.forSearchUsers=[...users];
       this.searchByFilteredValue=[...users];
 
+    },err=>{
+      console.log(err);
+      this.loadingStatus=false;
+      
+    },()=>{
+      this.loadingStatus=false;
     });
   }
   //this is user for current page
